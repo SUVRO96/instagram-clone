@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: #fafafa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  width: 100vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app_header {
+  color: #fafafa;
+  object-fit: contain;
+  background-color: #000000;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  background-color: #121212;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+
+.post_container {
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app_headerSearchBar {
+  background-color: #262626;
+  color: #a8a8a8;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.app_headerInput {
+  background-color: #262626;
+  color: #a8a8a8;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+.app_headerLikes {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app_headerLikesBtn {
   color: white;
+  padding: 10px 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.post_Stories {
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  background-color: #000000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea:focus,
+input:focus {
+  outline: none;
+  background-color: transparent;
+}
+.app_headerNav {
+  display: none;
+}
+.app_headerNav > div {
+  margin: 4px 0px;
+  padding: 12px;
+}
+.app_headerTabMenu {
+  display: none;
+}
+
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+
+.rec.rec-arrow {
+  z-index: 1;
+  background-color: white;
+  transition: all 0.3s ease;
+  font-size: 1.1rem !important;
+  width: 1.7rem !important;
+  height: 1.7rem !important;
+  min-width: 1.7rem !important;
+  line-height: 1.7rem !important;
+}
+.rec-carousel {
+  width: 118vw !important;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #444;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+
+.story_container {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: blue;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #fafafa;
+}
+.app_navItem {
+  cursor: pointer;
+}
+.fa-instagram {
+  display: none;
+}
+.rec-arrow-left {
+  position: relative !important;
+  left: 40px !important;
+}
+.rec-arrow-right {
+  position: relative !important;
+  right: 40px !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .app {
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+  .app_header {
+    position: sticky;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100vh;
+  }
+  .app_headerLikes {
+    display: none;
+  }
+
+  .desktop_off {
+    display: block;
+  }
+  .tab_off {
+    display: none;
+  }
+  .app_headerNav {
+    display: flex;
+    flex-direction: column;
+  }
+  .app_navAvatar {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #121212;
+    border-radius: 50%;
+  }
+  .app_headerTabMenu {
+    display: block;
+    margin: 4px 0px;
+    padding: 12px;
+  }
+  .app_navItem {
+    font-size: 24px;
+  }
+  .post_Stories {
+    width: 500px;
+  }
+  .rec-carousel {
+    width: 570px !important;
+  }
+  .rec-arrow-left {
+    position: relative !important;
+    left: 40px !important;
+  }
+  .rec-arrow-right {
+    position: relative !important;
+    right: 40px !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .app {
+    flex-direction: row;
+  }
+  .desktop_off {
+    display: none;
+  }
+  .tab_off {
+    display: inline;
+  }
+  .app_headerNav {
+    padding-right: 50px;
+    padding-left: 10px;
+  }
+  .app_headerImage {
+    position: relative;
+    left: -6%;
+    padding-right: 50px;
+    margin-bottom: 20px;
+  }
+
+  .app_navTitle {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  .app_header {
+    justify-content: flex-start;
+  }
+  .post_Stories {
+    width: 500px;
+  }
+  .rec-carousel {
+    width: 570px !important;
+  }
+  .rec-arrow-left {
+    position: relative !important;
+    left: 40px !important;
+  }
+  .rec-arrow-right {
+    position: relative !important;
+    right: 40px !important;
   }
 }
